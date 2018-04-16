@@ -1,1 +1,1 @@
-notification
+Notifications Landing Page
