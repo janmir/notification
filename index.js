@@ -1,6 +1,7 @@
 import m from "./mithril.js"
 import anime from './anime.js'
 import { setTimeout, setInterval } from "timers";
+import tippy from 'tippy.js'
 
 /*********************One signal initializations************************/
 var OneSignal = window.OneSignal || [];
@@ -16,6 +17,18 @@ OneSignal.push(function() {
       "message": "Thanks for subscribing!",
     },
   });
+});
+
+OneSignal.push(function() {
+  // If we're on an unsupported browser, do nothing
+  if (!OneSignal.isPushNotificationsSupported()) {
+      return;
+  }
+  //updateMangeWebPushSubscriptionButton(buttonSelector);
+  //OneSignal.on("subscriptionChange", function(isSubscribed) {
+      /* If the user's subscription state changes during the page's session, update the button text */
+      //updateMangeWebPushSubscriptionButton(buttonSelector);
+  //});
 });
 /*********************Functions************************/
 var fn = {
@@ -77,6 +90,27 @@ var fn = {
 }
 
 /*********************Components************************/
+var menu = {
+  about: "This is about message",
+  oncreate: (vnode)=>{
+    tippy(".menu_item",{
+      trigger: 'click',
+      arrow: true,
+      arrowType: 'round',
+      animateFill: true,
+      distance: 1,
+    })
+  },
+  view: (vnode)=>{
+    return  m("div#menu",[
+      m(".menu_item",{title:menu.about},"About"),
+      m(".menu_item","Credits"),
+      m(".menu_item","Help?"),
+      //m(".menu_item","with❤️by ;p")
+    ]);
+  }
+}
+
 var message = {
   view: (vnode)=>{
     return  m("div#message",[
@@ -108,15 +142,19 @@ var App = {
   view: (vnode)=>{
     console.log("Redraw:", vnode);
     
-    return  m("div#app",[
-      m("div#greetings","Purr-fect day to you, Hooman!"),
-      m("div#purr_container",[
-        m(purr),
-        m("div#count", 1)
-      ]),
-      m(message),
-      m(button)
-    ]);
+    return  m("div#container", [
+      m(menu),
+      m("div#app",
+        [
+          m("div#greetings","Purr-fect day to you, Hooman!"),
+          m("div#purr_container",[
+            m(purr),
+            m("div#count", 1)
+          ]),
+          m(message),
+          m(button)
+        ])
+      ]);
   }
 }
 
