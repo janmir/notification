@@ -117,6 +117,10 @@ var button = {
         console.log("UNSUBSCRIBE")
           /* Subscribed, opt them out */
           OneSignal.setSubscription(false);
+
+          setTimeout(()=>{
+            location.reload();
+          },1000)
       } else {
           console.log("SUBSCRIBE")
           if (state.isOptedOut) {
@@ -129,10 +133,6 @@ var button = {
               OneSignal.registerForPushNotifications();
           }
       }
-
-      setTimeout(()=>{
-        location.reload();
-      },1000)
     });
   },
   view: (vnode)=>{
