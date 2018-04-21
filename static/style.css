@@ -1,5 +1,12 @@
 html{font-size: 100%;}
 
+noscript{    
+    width: 100%;
+    color: whitesmoke;
+    text-align: center;
+    display: block;
+}
+
 body{
     margin: 0;
     padding: 0;
