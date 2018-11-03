@@ -209,33 +209,105 @@ var form = {
 var menu = {
   about: `
   <div style="text-align:left">
-  Landing page for notification subscription.
+  This is a landing page for notification subscription. 
+  Just read the Help section if you're
+  a bit confused 😕.
   <br/><br/>
   <b>Disclamer</b>
   <br/>
-  THE WEB APP IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE APP OR THE USE OR OTHER DEALINGS IN THE APP. <br/><br/>FURTHERMORE, THIS WEBSITE IS NOT AFFILIATED WITH, ENDORSED BY, OR IN ANY OTHER WAY ASSOCIATED WITH AWS INC..
+  THE WEB APPLICATION IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE APPLICATION OR THE USE OR OTHER DEALINGS IN THE APPLICATION. <br/><br/>FURTHERMORE, THIS WEB APPLICATION IS NOT AFFILIATED WITH, ENDORSED BY, OR IN ANY OTHER WAY ASSOCIATED WITH ADVANCED WORLD SYSTEMS INC..
   </div>
   `,
   credits: `
   <div style="text-align:left">
-  <b>Cat Images</b><br/><i>http://iconka.com/en/</i><br/><br/>
-  <b>Cat Puns</b><br/><i>http://blog.spikepadley.com/post/72332709432/cat-puns</i><br/><br/>
-  <b>Cat Quotes</b><br/><i>https://www.pinterest.com/pin/73394668911177177</i>
+  <b>😻 Cat Images</b><br/><i style="background-color:lightgray">http://iconka.com/en/</i><br/><br/>
+  <b>😽 Cat Puns</b><br/><i style="background-color:lightgray">http://blog.spikepadley.com/post/72332709432/cat-puns</i><br/><br/>
+  <b>🐈 Cat Quotes</b><br/><i style="background-color:lightgray">https://www.pinterest.com/pin/73394668911177177</i>
   </div>
+  `,
+  pricing: `
+  <ul id="price">
+  <li><img src="https://notif.janmir.me/static/icon0.png"><div><div class="name">
+  Daku mata miming
+  </div><div class="desc">
+  Daku ni siya og mata O_O.
+  </div><div class="price">
+  ¥ 1,000
+  </div></div></li>
+  <li><img src="https://notif.janmir.me/static/icon4.png"><div><div class="name">
+  Chill miming
+  </div><div class="desc">
+  Chill so mahal.
+  </div><div class="price">
+  ¥ 1,000,000
+  </div></div></li>
+  <li><img src="https://notif.janmir.me/static/icon7.png"><div><div class="name">
+  Loner miming
+  </div><div class="desc">
+  Soo so sad T_T
+  </div><div class="price">
+  ¥ 999,000
+  </div></div></li>
+  <li><img src="https://notif.janmir.me/static/icon10.png"><div><div class="name">
+  Chubby miming
+  </div><div class="desc">
+  Busog.
+  </div><div class="price">
+  ¥ 100
+  </div></div></li>
+  <li><img src="https://notif.janmir.me/static/icon17.png"><div><div class="name">
+  Grumpy miming
+  </div><div class="desc">
+  Bad-tempered and irritable.
+  </div><div class="price">
+  ¥ 2,500
+  </div></div></li>
+  </ul>
   `,
   help: `
   <div style="text-align:left">
-  <b>What to do?</b><br/>
+  <b style="font-size:1.2em">🚀What is this?</b><br/>
+  This is a web notification service for random things. 
+  Currently here are/is the service(s) available for you
+  to subscribe to...I call them realms. 
+  <ul>
+  <li><b>odtr</b></li>
+  <i>
+  This service notifies you to time-out. That's it 😆.
+  Notifications are created every 9:46AM JST and will be delivered to
+  you at exactly 9 hours after, so if you're late, you won't receiving any. Am sorry 😜.
+  </i>
+  <li>(more to come...or not HAHAHAHA 🤣 )</li>
+  </ul> 
+  <b style="font-size:1.2em">🎎What should I do?</b><br/>
   Push the button!, 
   by pushing it you subscribe/un-subscribe to push 
   notifications from this web application (notif.janmir.me).<br/><br/>
-  <b>Persistence</b><br/>
+  <b style="font-size:1.2em">🏮Wait what?</b><br/>
+  Seriously? Ummm okay here's what it looks like.<br/><br/>
+  In Windows...
+  <div style="text-align:center;margin:1em auto">
+  <img src="./static/notification.png"/>
+  </div>
+  So, if you subscribe to "odtr" it would say something like - <i>"Hey! You can 
+  time-out now".</i>
+  Got it? Good. 🤩<br/>
+  By the way, this only works on Chrome Browsers
+  for Mac and Windows. So don't close your Chrome..you can close this website tho, 
+  it will still work<br/><br/>
+  <b style="font-size:1.2em">🏯Persistence</b><br/>
   By default, Chrome notifications will persist on Windows PC until 
   the user dismisses or clicks the notification. On Mac, they will 
-  disappear roughly after 20 seconds.<br/><br/>
+  disappear roughly after 20 seconds.<br/>
   Clearing browsing data e.g cookies, history would stop the app from
-  working (notification won't pop-up anymore). To re-enable subscription
-  you need to visit the web application page again.
+  working (notification won't pop-up anymore). To fix this, you need to re-enable 
+  your subscription by visiting this web application again.
+  <br/><br/>
+  <b style="font-size:1.2em">🎀Other FAQs - Frequently Answered Questions</b><br/>
+  <ul>
+  <li><b>Why all the miming?</b></li>
+  Because you know...
+  </ul> 
   </div>
   `,
   makeTemplate: (tmp)=>{
@@ -276,14 +348,18 @@ var menu = {
       interactive: true,
       onShow: (instance)=>{
         instance.reference.classList.add("menu_selected");
+        let h = doc.getElementById("heart")
+        h.classList.add("redHeart")
       },
       onHide: (instance)=>{        
         instance.reference.classList.remove("menu_selected");
+        let h = doc.getElementById("heart")
+        h.classList.remove("redHeart")
       }
     });
-    tippy("#help",{
+    tippy("#pricing",{
       trigger: 'click',
-      html: menu.makeTemplate(menu.help),
+      html: menu.makeTemplate(menu.pricing),
       animateFill: true,
       arrow: true,
       arrowType: 'large',
@@ -299,12 +375,31 @@ var menu = {
         instance.reference.classList.remove("menu_selected");
       }
     });
+    tippy("#help",{
+      trigger: 'click',
+      html: menu.makeTemplate(menu.help),
+      animateFill: true,
+      arrow: true,
+      arrowType: 'large',
+      theme: "light",
+      distance: 1,
+      maxWidth:'38em',
+      animation: 'perspective',
+      interactive: true,
+      onShow: (instance)=>{
+        instance.reference.classList.add("menu_selected");
+      },
+      onHide: (instance)=>{        
+        instance.reference.classList.remove("menu_selected");
+      }
+    });
   },
   view: (vnode)=>{
     return  m("div#menu",[
       m("#about.menu_item", "About"),
-      m("#credits.menu_item", "Credits"),
       m("#help.menu_item", "Help"),
+      m("#pricing.menu_item", "Pricing"),
+      m("#credits.menu_item", [m("span#heart","❤"), "Credits"]),
     ]);
   }
 }
@@ -424,7 +519,7 @@ var App = {
   punnyQuotes: ["You are purrrfect, I'm not kitten you :3",
                 "When I'm with you I'm feline good :P",
                 "I think you're really purrretty :*",
-                "You are kinda pawsome.. :D",
+                "You are kinda pawsome..",
                 "Today, I would've been clawful without you. Fur-real!"],
   quoteIndex: 0,
 
@@ -479,7 +574,7 @@ var App = {
           toHide.style.display = "block"
           theLoad.style.display = "none"
           if(!App.showForm){
-            theApp.style.height = "7.5em"
+            theApp.style.height = "8em"
           }else{
             theApp.style.height = "15em"
           }
@@ -526,7 +621,7 @@ var App = {
     let theForm = null;
     if(App.showForm){
       theForm = m(".inner_form",[
-        m("#but_first", "But first! fill me up."),
+        m("#but_first", "But first! fill this up."),
         m(form),
       ]);
     }

@@ -1,5 +1,5 @@
 html{
-    font-size: 100%;
+    font-size: 90%;
     margin: 0;
     padding: 0;
 }
@@ -41,7 +41,7 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 1em;
-    box-shadow: 0px 6px darkgrey, 0px 11px 18px 5px #00000059;
+    box-shadow: 0px 6px darkgrey, 0px 13px 20px 3px #00000085;
     padding-bottom: 4em;
     height: 0;
     transition: height 0.2s ease;
@@ -73,7 +73,7 @@ body{
 
 #menu{
     margin-left: 0.2em;
-    color: gray;
+    color: #b1b1b1;
     position: fixed;
     top: 0;
     left: 0;
@@ -88,11 +88,11 @@ body{
     }
 
     #menu .menu_item:hover{
-        color:lightgray;
+        color:rgb(224, 224, 224);
     }
 
     #menu .menu_selected{
-        color:lightgray;
+        color:rgb(236, 236, 236);
     }
 
 #greetings{
@@ -156,7 +156,7 @@ body{
 #purr_container{
     top: -5.8em;
     position: absolute;
-    left: 25%;
+    left: 20%;
     transform: translateX(-50%);
 }
     #count{
@@ -184,6 +184,7 @@ body{
         color: antiquewhite;
     }
     #catQuote{
+        word-wrap: break-word;
         line-height: 1.3em;
         position: absolute;
         right: -14em;
@@ -306,11 +307,59 @@ fieldset:disabled{
     border-bottom-color: whitesmoke;
 }
 
+#heart{
+    display: inline-block;
+    margin: 0 0.2em;
+}
+.redHeart{
+    color: crimson;
+    font-weight: bolder;
+}
+
+#price{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#price li{
+    border-bottom: 1px dashed lightgray;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 0.3em;
+}
+#price li:last-child{
+    border: none;
+}
+#price li > img{
+    height: 5em;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+#price li > div{
+    transform: translateY(-18%);
+    text-align: left;
+    display: inline-block;
+}
+#price li .name{
+    font-weight: bold;
+}
+#price li .desc{
+    width: 12em;
+    font-style: italic;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 1.3em;
+}
+#price li .price{
+    color: gray;
+}
+
 #purrBorder {
     border-radius: 50%;
     padding: 0.3em;
     position: relative;
-    top: -0.5em;
+    top: -0.2em;
     background: linear-gradient(124deg, #fa7c91, #e81d1d, #e8931d, #e8c71d, #afe81d, #1ddde8, #1d69e8, #dd00f3, #dd00f3);
     background-size: 1100% 500%;
     animation: rainbow 15s ease infinite, bounce 1s ease 2;
